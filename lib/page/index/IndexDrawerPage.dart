@@ -10,6 +10,7 @@ class IndexDrawerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new ListView(
       children: <Widget>[
+        ///头像
         new UserAccountsDrawerHeader(
           accountName: new Text(name),
           accountEmail: new Text(email),

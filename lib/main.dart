@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: GlobalConfig.colorPrimary
       ),
+      ///添加主页面
       home: new ApplicationPage(),
     );
   }
