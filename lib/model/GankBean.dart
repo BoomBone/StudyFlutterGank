@@ -51,16 +51,15 @@ class Category {
       this.welfare});
 
   Category.fromJson(jsonRes) {
-    android = jsonRes['android'] == null ? null : [];
+    android = jsonRes['Android'] == null ? null : [];
 
-    for (var androidItem in android == null ? [] : jsonRes['android']) {
-      android
-          .add(androidItem == null ? null : new Android.fromJson(androidItem));
+    for (var androidItem in android == null ? [] : jsonRes['Android']) {
+      android.add(androidItem == null ? null : new Android.fromJson(androidItem));
     }
 
-    app = jsonRes['app'] == null ? null : [];
+    app = jsonRes['App'] == null ? null : [];
 
-    for (var appItem in app == null ? [] : jsonRes['app']) {
+    for (var appItem in app == null ? [] : jsonRes['App']) {
       app.add(appItem == null ? null : new App.fromJson(appItem));
     }
 
@@ -109,7 +108,7 @@ class Category {
 }
 
 class Welfare {
-  String used;
+  bool used;
   String id;
   String createdAt;
   String desc;
@@ -363,7 +362,7 @@ class App {
 }
 
 class Android {
-  String used;
+  bool used;
   String id;
   String createdAt;
   String desc;

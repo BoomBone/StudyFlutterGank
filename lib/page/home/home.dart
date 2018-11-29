@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gank/api/api.dart';
+import 'package:flutter_gank/api/http.dart';
+import 'package:flutter_gank/model/GankBean.dart';
+import 'dart:convert';
 
 class HomePage extends StatelessWidget {
   @override
@@ -31,5 +35,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Text("Home"),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    NetUtil.get(Api.TODAY_URL, (data) {
+      print("<data>:" + data.toString());
+      Category category = Category.fromJson(data);
+      print("<desc>:" + category.welfare[0].desc);
+
+    });
   }
 }
